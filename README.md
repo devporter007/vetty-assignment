@@ -1,32 +1,44 @@
 # SQL Test Submission (MySQL)
 
-This repository contains a **single consolidated SQL script** (`solution.sql`) that includes all eight query solutions requested in the assessment.
+This repository contains a **single consolidated SQL script** (`solution.sql`) that includes all eight SQL query solutions requested in the assessment.  
+Each screenshot (`qX.png`) demonstrates the **executed query output** on a sample dataset.
 
-## Contents
+---
+
+## Repository Contents
 
 | File | Description |
 |------|-------------|
-| `solution.sql` | Contains answers to Q1–Q8 clearly separated and documented |
+| `solution.sql` | Full executable SQL script with dataset + Q1–Q8 answers |
+| `q1.png` | Output of Query 1 |
+| `q2.png` | Output of Query 2 |
+| `q3.png` | Output of Query 3 |
+| `q4.png` | Output of Query 4 |
+| `q5.png` | Output of Query 5 |
+| `q6.png` | Output of Query 6 |
+| `q7.png` | Output of Query 7 |
+| `q8.png` | Output of Query 8 |
+| `README.md` | This documentation |
 
-Each query is labeled and commented so reviewers can execute and evaluate individually.
+Each query in `solution.sql` is labeled and commented so reviewers can execute or inspect them independently.
 
 ---
 
 ## Assumptions
 
-The following assumptions are documented inside the `.sql` file as required:
+The following assumptions (as requested in the assignment brief) are included inside the SQL file:
 
-1. Refund is only considered valid when `refund_time IS NOT NULL`.
-2. First order per store is based on the earliest `purchase_time`.
-3. Refund eligibility (Q6) is determined by a 72-hour (3-day) window.
-4. First purchase per buyer is based on minimum timestamp.
-5. All timestamps are in UTC and clean.
+1. A purchase is considered refunded only if `refund_time IS NOT NULL`.
+2. First order per store is determined using earliest `purchase_time`.
+3. Refund eligibility (Q6) is valid when refund occurs within **72 hours** of purchase.
+4. First purchase per buyer determined by earliest timestamp.
+5. All timestamps are assumed to be in UTC and consistent.
 
 ---
 
-## Execution
+## How to Execute
 
-This script can be executed as a whole, or reviewers may run individual question blocks:
+You can run the full solution at once:
 
 ```sql
 SOURCE solution.sql;
